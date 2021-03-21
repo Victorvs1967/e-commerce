@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <title>e-commerce products catalog</title>
+    
+    <link rel="stylesheet" href="/bootstrap.min.css"></link>
+    <script src="/bootstrap.bundle.min.js" defer="true"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="col-6 mx-auto">
+            <h1>Catalog</h1>
+            <ul class="list-group">
+                <li data-th-each="product : ${products}" class="product list-group-item">
+                    <a class="text-decoration-none" data-th-href="@{/catalog/products/{productId}(productId=${product.id})}"
+                        data-th-text="${product.title}"></a>
+                </li>
+            </ul>        
+        </div>
+    </div>
+</body>
+</html>
