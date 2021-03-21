@@ -65,7 +65,7 @@ public class ProductsControllerTest {
 
         Assertions.assertNotNull(modelAndView);
         Assertions.assertEquals(products, modelAndView.getModel().get("products"));
-        Assertions.assertEquals("/catalog/products/list", modelAndView.getViewName());
+        Assertions.assertEquals("catalog/products/list", modelAndView.getViewName());
         Assertions.assertEquals(HttpStatus.OK, modelAndView.getStatus());
 
         Mockito.verify(this.productRepository).findAll();
