@@ -1,6 +1,9 @@
 package com.vvs.ecommerce.repository;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.UUID;
 
 import com.vvs.ecommerce.entity.Product;
 
@@ -18,5 +21,11 @@ public class ProductRepository {
 
     public List<Product> findAll() {
         return this.products;
+    }
+
+    public Optional<Product> findOneById(UUID id) {
+        return this.products.stream()
+                .filter(product -> Objects.equals(id, product.getId()))
+                .findFirst();
     };
 }
